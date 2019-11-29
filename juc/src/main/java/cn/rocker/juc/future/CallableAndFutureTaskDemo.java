@@ -1,4 +1,4 @@
-package cn.rocker.juc;
+package cn.rocker.juc.future;
 
 import java.util.concurrent.*;
 
