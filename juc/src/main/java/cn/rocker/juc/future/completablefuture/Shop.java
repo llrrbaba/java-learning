@@ -20,8 +20,21 @@ public class Shop {
      * @param product 商品名称
      * @return
      */
-    public double getPriceSync(String product) {
+    public double getPriceSyncV1(String product) {
         return calculatePrice(product);
+    }
+
+    /**
+     * 同步地调用，根据指定商品名称返回商品价格
+     *
+     * @param product 商品名称
+     * @return
+     */
+    public String getPriceSyncV2(String product) {
+        Random random = new Random();
+        double price = calculatePrice(product);
+        Discount.Code code = Discount.Code.values()[random.nextInt(Discount.Code.values().length)];
+        return String.format("%s:%.2f:%s", name, price, code);
     }
 
     public Future<Double> getPriceAsyncV1(String product) {
@@ -47,7 +60,7 @@ public class Shop {
         return futurePrice;
     }
 
-    public Future<Double> getPriceAsyncV2(String product){
+    public Future<Double> getPriceAsyncV2(String product) {
         return CompletableFuture.supplyAsync(() -> calculatePrice(product));
     }
 
@@ -69,6 +82,19 @@ public class Shop {
     public static void delay() {
         try {
             Thread.sleep(1000L);
+        } catch (InterruptedException e) {
+            throw new RuntimeException();
+        }
+    }
+
+    /**
+     * 模拟延迟0.5-2秒种的方法
+     */
+    public static void randomdelay() {
+        Random random = new Random();
+        int delay = 500 + random.nextInt(2000);
+        try {
+            Thread.sleep(delay);
         } catch (InterruptedException e) {
             throw new RuntimeException();
         }
