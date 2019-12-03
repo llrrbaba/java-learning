@@ -1,4 +1,4 @@
-package cn.rocker.juc.future.completablefuture;
+package cn.rocker.juc.future.completablefuture1;
 
 /**
  * @author rocker

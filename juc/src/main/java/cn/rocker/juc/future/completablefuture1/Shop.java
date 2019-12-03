@@ -1,8 +1,7 @@
-package cn.rocker.juc.future.completablefuture;
+package cn.rocker.juc.future.completablefuture1;
 
 import lombok.Data;
 
-import java.util.List;
 import java.util.Random;
 import java.util.concurrent.*;
 
@@ -33,6 +32,7 @@ public class Shop {
     public String getPriceSyncV2(String product) {
         Random random = new Random();
         double price = calculatePrice(product);
+        int i = 1 / 0;
         Discount.Code code = Discount.Code.values()[random.nextInt(Discount.Code.values().length)];
         return String.format("%s:%.2f:%s", name, price, code);
     }

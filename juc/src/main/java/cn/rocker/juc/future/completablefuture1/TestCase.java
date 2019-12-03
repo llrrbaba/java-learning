@@ -1,8 +1,8 @@
-package cn.rocker.juc.future.completablefuture;
+package cn.rocker.juc.future.completablefuture1;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
-import javax.sound.midi.Soundbank;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -17,6 +17,7 @@ import java.util.stream.Stream;
  * @create: 2019-11-29 18:45
  * @since:
  **/
+@Slf4j
 public class TestCase {
 
     List<Shop> shops = Arrays.asList(
@@ -98,14 +99,15 @@ public class TestCase {
 
 //        System.out.println(findPricesWithCompletableFuture("myPhone27S"));
 
-//        System.out.println(findPricesUsingDiscount("myPhone27S"));
+        System.out.println(findPricesUsingDiscount("myPhone27S"));
 
 //        System.out.println(findPricesUsingDiscountWithCompletableFuture("myPhone27S"));
 
-        CompletableFuture[] futures = findPriceStream("myPhone27S").map(f -> f.thenAccept(System.out::println)).toArray(size -> new CompletableFuture[size]);
+//        CompletableFuture[] futures = findPriceStream("myPhone27S").map(f -> f.thenAccept(System.out::println)).toArray(size -> new CompletableFuture[size]);
+//        findPriceStream("myPhone27S");
 //        CompletableFuture.allOf(futures).join();
-        CompletableFuture.anyOf(futures).join();
-//        System.in.read();
+//        CompletableFuture.anyOf(futures).join();
+        System.in.read();
 
         long duration = (System.nanoTime() - start) / 1000000;
         System.out.println("done in " + duration + "ms");
