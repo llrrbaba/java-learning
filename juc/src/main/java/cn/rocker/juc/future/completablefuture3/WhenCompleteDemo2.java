@@ -31,7 +31,8 @@ public class WhenCompleteDemo2 {
             // 当子线程A执行到f.complete的时候，会去看是否有注册好的f的then或者when（非async的），如果有的话，会顺次去执行。
             f.complete(100);
             log.info("子线程A结束");
-        }).start();;
+        }).start();
+        ;
 
 
         /**
