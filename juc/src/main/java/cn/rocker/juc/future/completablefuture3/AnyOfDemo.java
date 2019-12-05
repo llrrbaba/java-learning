@@ -1,50 +1,55 @@
 package cn.rocker.juc.future.completablefuture3;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
 
 /**
- * @author: chengzc
+ * @author: rocker
  * @create: 2019-12-05 11:07
  * @since:
  **/
+@Slf4j
 public class AnyOfDemo {
 
     @Test
     public void test() {
         Random rand = new Random();
-        CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> {
+        CompletableFuture<Void> future1 = CompletableFuture.runAsync(() -> {
             try {
                 Thread.sleep(rand.nextInt(1000));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            return "from future1";
+            log.info("from future1");
         });
-        CompletableFuture<String> future2 = CompletableFuture.supplyAsync(() -> {
+        CompletableFuture<Void> future2 = CompletableFuture.runAsync(() -> {
             try {
                 Thread.sleep(rand.nextInt(1000));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            return "from future2";
+            log.info("from future2");
         });
-        CompletableFuture<String> future3 = CompletableFuture.supplyAsync(() -> {
+        CompletableFuture<Void> future3 = CompletableFuture.runAsync(() -> {
             try {
                 Thread.sleep(rand.nextInt(1000));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            return "from future3";
+            log.info("from future3");
         });
 
         CompletableFuture<Object> future = CompletableFuture.anyOf(future1, future2, future3);
 
         try {
-//            System.out.println(future.get());
+            // 阻塞式地等待
+            // System.out.println(future.get());
+
+            // 非阻塞式地回调
+            future.whenComplete((v,t) -> log.info("any done"));
             System.in.read();
         } catch (Exception e) {
             e.printStackTrace();

@@ -48,6 +48,7 @@ public class AllofDemo {
             log.info("future3:{}", 333);
         });
 
+        // 非阻塞式地回调
         CompletableFuture.allOf(future1, future2, future3).whenComplete((v,t) -> {
             log.info("all done");
         });
