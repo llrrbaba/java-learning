@@ -25,7 +25,8 @@ public class AllofDemo {
                 .thenApply(v ->
                         Stream.of(future1, future2, future3)
                                 .map(CompletableFuture::join)
-                                .collect(Collectors.joining(" ")))
+//                                .collect(Collectors.joining(" ")))
+                                .collect(Collectors.toList()))
                 .thenAccept(System.out::print);
     }
 
