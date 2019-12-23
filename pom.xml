@@ -12,6 +12,7 @@
         <module>log</module>
         <module>juc</module>
         <module>nacos</module>
+        <module>exception</module>
     </modules>
 
 
