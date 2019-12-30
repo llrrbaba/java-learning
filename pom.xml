@@ -13,6 +13,7 @@
         <module>juc</module>
         <module>nacos</module>
         <module>exception</module>
+        <module>guava</module>
     </modules>
 
 
