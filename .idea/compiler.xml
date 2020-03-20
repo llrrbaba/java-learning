@@ -7,7 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="log4j" />
-        <module name="log" />
+        <module name="test" />
+        <module name="exception" />
+        <module name="nacos" />
+        <module name="juc" />
+        <module name="guava" />
+        <module name="poi" />
       </profile>
     </annotationProcessing>
   </component>
