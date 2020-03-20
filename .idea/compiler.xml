@@ -11,6 +11,7 @@
         <module name="juc" />
         <module name="jvm" />
         <module name="log4j" />
+        <module name="test" />
       </profile>
     </annotationProcessing>
   </component>
