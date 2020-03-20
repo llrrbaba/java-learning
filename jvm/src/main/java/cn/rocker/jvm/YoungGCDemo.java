@@ -11,6 +11,7 @@ package cn.rocker.jvm;
 public class YoungGCDemo {
 
     public static void main(String[] args) {
+        System.out.println("wwwwwwwwwwwwwwwwwwwwwwww");
         byte[] bytes1 = new byte[1024 * 1024];
         bytes1 = new byte[1024 * 1024];
         bytes1 = new byte[1024 * 1024];

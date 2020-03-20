@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="exception" />
+        <module name="guava" />
+        <module name="juc" />
+        <module name="jvm" />
         <module name="log4j" />
-        <module name="log" />
       </profile>
     </annotationProcessing>
   </component>
