@@ -11,12 +11,7 @@
     <modules>
         <module>log</module>
         <module>juc</module>
-        <module>exception</module>
-        <module>guava</module>
-        <module>test</module>
-        <module>jvm</module>
         <module>design-pattern</module>
-        <module>java8</module>
     </modules>
 
 
