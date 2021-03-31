@@ -44,7 +44,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>25.0-jre</version>
+            <version>29.0-jre</version>
         </dependency>
         <!-- sentry整合log4j，结合自己当前项目中采用的日志框架及版本来选用适应的sentry依赖 -->
         <dependency>
